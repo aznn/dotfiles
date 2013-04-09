@@ -76,7 +76,7 @@ function chrome; {
 
 # sublime foldername
 function sublime; {
-    nohup sublime-text $* >/dev/null 2>&1 &
+    nohup "/home/azaan/Software/Sublime Text 2/sublime_text" $* >/dev/null 2>&1 &
 }
 
 # domath "sin(2)"
