@@ -2,3 +2,12 @@
 set guioptions=aegimLt
 set lines=39
 set columns=80
+
+" enable the saving and restoring of screen position
+let g:screen_size_restore_pos=1
+
+" To save and restore screen for each Vim instance.
+" This is useful if you routinely run more than one Vim instance.
+" For all Vim to use the same settings, change this to 0.
+let g:screen_size_by_vim_instance=1
+
