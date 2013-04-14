@@ -122,13 +122,17 @@ alias clem="nohup clementine >/dev/null 2>&1 &"
 alias burp="nohup java -jar ~/dev/bin/burpsuite_free_v1.5.jar > /dev/null 2>&1 &"
 
 # shell helpers
+export TERM=xterm-256color
 alias sz="source ~/.zshrc"
-alias zshrc="gvim ~/.zshrc"
-alias vimrc="gvim ~/.vimrc"
+alias zshrc="gvim ~/dotfiles/zsh/zshrc"
+alias vimrc="gvim ~/dotfiles/vim/vimrc"
 alias cwd="pwd | tr -d '\n' | xsel -b" #copy current working dir
 alias pgoogle="ping www.google.com"
 alias l="ls -lh"
 alias netlog="sudo nethogs"
+
+# vim aliases
+alias vim="gvim"
 
 alias mv="mv -i" #comfirm on overwrite
 alias rm="rm -i"

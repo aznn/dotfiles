@@ -1,0 +1,33 @@
+" start vundle Settings
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'gmarik/vundle'
+
+" My bundles
+"--------------------------------------------------------
+Bundle 'git@github.com:Lokaltog/powerline'
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim/
+
+
+filetype plugin indent on
+" end vundle settings
+"--------------------------------------------------------
+
+" Visual settings
+colorscheme Tomorrow-Night 
+set guifont=Inconsolata\ 13
+
+" tab settings
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+
+set encoding=utf-8
+set autoindent
+set number
+" show status all the time
+set laststatus=2

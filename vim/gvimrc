@@ -1,0 +1,4 @@
+"Disable the buttons on top
+set guioptions=aegimLt
+set lines=39
+set columns=80
