@@ -132,7 +132,7 @@ alias l="ls -lh"
 alias netlog="sudo nethogs"
 
 # vim aliases
-alias vim="gvim"
+alias g="gvim"
 
 alias mv="mv -i" #comfirm on overwrite
 alias rm="rm -i"
