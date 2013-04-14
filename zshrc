@@ -124,11 +124,15 @@ alias burp="nohup java -jar ~/dev/bin/burpsuite_free_v1.5.jar > /dev/null 2>&1 &
 # shell helpers
 alias sz="source ~/.zshrc"
 alias zshrc="sublime ~/.zshrc"
-alias cwd="pwd | tr -d '\n' | xsel -b"
+alias cwd="pwd | tr -d '\n' | xsel -b" #copy current working dir
 alias pgoogle="ping www.google.com"
-alias lsl="ls -lh"
+alias l="ls -lh"
 alias netlog="sudo nethogs"
-alias so="sudo"
+
+alias mv="mv -i" #comfirm on overwrite
+alias rm="rm -i"
+alias cp="cp -i"
+
 alias pyinstall="sudo python setup.py install"
 
 # xampp server
