@@ -123,7 +123,8 @@ alias burp="nohup java -jar ~/dev/bin/burpsuite_free_v1.5.jar > /dev/null 2>&1 &
 
 # shell helpers
 alias sz="source ~/.zshrc"
-alias zshrc="sublime ~/.zshrc"
+alias zshrc="gvim ~/.zshrc"
+alias vimrc="gvim ~/.vimrc"
 alias cwd="pwd | tr -d '\n' | xsel -b" #copy current working dir
 alias pgoogle="ping www.google.com"
 alias l="ls -lh"
