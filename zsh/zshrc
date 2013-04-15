@@ -134,6 +134,9 @@ alias netlog="sudo nethogs"
 # vim aliases
 alias g="gvim"
 
+# git aliases
+alias gc="git commit -am"
+
 alias mv="mv -i" #comfirm on overwrite
 alias rm="rm -i"
 alias cp="cp -i"
