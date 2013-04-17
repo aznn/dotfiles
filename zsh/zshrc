@@ -170,3 +170,7 @@ setopt AUTO_CD
 
 # 10 second wait if you do something that will delete everything.  :)
 setopt RM_STAR_WAIT
+
+# enable search history
+bindkey "^[[A" history-search-backward
+bindkey "^[[B" history-search-forward

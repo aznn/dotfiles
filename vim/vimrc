@@ -12,6 +12,7 @@ Bundle 'git@github.com:altercation/vim-colors-solarized.git'
 Bundle 'git@github.com:scrooloose/nerdcommenter.git'
 Bundle 'git@github.com:kevinw/pyflakes-vim.git'
 Bundle 'git@github.com:Lokaltog/powerline'
+Bundle 'git@github.com:tpope/vim-fugitive.git'
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim/
 
 filetype plugin indent on
@@ -28,22 +29,22 @@ let g:solarized_contrast="high"
 let g:solarized_visibility="high"
 
 " disable blinking cursor
-set gcr=a:blinkon0
+"set gcr=a:blinkon0
 
 set guifont=Inconsolata\ 13
 
 " tab settings
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-set expandtab
+"set tabstop=4
+"set shiftwidth=4
+"set softtabstop=4
+"set expandtab
 
-set encoding=utf-8
-set autoindent
-set number
+"set encoding=utf-8
+"set autoindent
+"set number
 
-" show status all the time
+"" show status all the time
 set laststatus=2
 
-" set backup dir
-set backupdir=~/tmp
+"" set backup dir
+"set backupdir=~/tmp
