@@ -55,6 +55,10 @@ command Wq wq
 command W w
 command Q q
 
+" ctrl-c/ctrl-v use system clipboard
+noremap <C-c> "+y
+noremap <c-q> "+p
+
 " gvim settings
 if has('gui_running')
     set guioptions=aegimLt    

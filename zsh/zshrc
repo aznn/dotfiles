@@ -129,6 +129,7 @@ alias cwd="pwd | tr -d '\n' | xsel -b" #copy current working dir
 alias pgoogle="ping www.google.com"
 alias l="ls -lh"
 alias netlog="sudo nethogs"
+alias cc="cd;clear"
 
 # vim aliases
 alias g="gvim"
