@@ -8,11 +8,11 @@ Bundle 'gmarik/vundle'
 
 " My bundles
 "--------------------------------------------------------
-Bundle 'git@github.com:altercation/vim-colors-solarized.git'
-Bundle 'git@github.com:scrooloose/nerdcommenter.git'
-Bundle 'git@github.com:kevinw/pyflakes-vim.git'
-Bundle 'git@github.com:Lokaltog/powerline'
-Bundle 'git@github.com:tpope/vim-fugitive.git'
+Bundle 'altercation/vim-colors-solarized.git'
+Bundle 'scrooloose/nerdcommenter.git'
+Bundle 'kevinw/pyflakes-vim.git'
+Bundle 'Lokaltog/powerline'
+Bundle 'tpope/vim-fugitive.git'
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim/
 
 filetype plugin indent on
@@ -34,17 +34,24 @@ let g:solarized_visibility="high"
 set guifont=Inconsolata\ 13
 
 " tab settings
-"set tabstop=4
-"set shiftwidth=4
-"set softtabstop=4
-"set expandtab
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
 
-"set encoding=utf-8
-"set autoindent
-"set number
+set encoding=utf-8
+set autoindent
+set number
 
 "" show status all the time
 set laststatus=2
 
 "" set backup dir
 "set backupdir=~/tmp
+
+" gvim settings
+if has('gui_running')
+    set guioptions=aegimLt    
+    set lines=36
+    set columns=80
+endif
