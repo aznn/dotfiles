@@ -105,7 +105,7 @@ function suspendat; {
 # music settings
 export PLAYER=rythmbox
 alias rbox="rhythmbox"
-alias song="/home/azaan/dev/projects/RhythmRemote/rhythmRemote.py"
+alias song="/home/azaan/dev/Rhythmbox-Remote/rhythmRemote.py"
 alias sw="song what"
 alias sn="song next"
 alias sp="song prev"
@@ -134,8 +134,8 @@ alias netlog="sudo nethogs"
 alias g="gvim"
 
 # git aliases
-alias gc="git commit"
-alias gca="git commit -a"
+alias gc="git commit --verbose"
+alias gca="git commit --verbose -a"
 alias gcm="git commit -m"
 alias gcam="git commit -am"
 alias gd="git diff --color"
@@ -155,6 +155,9 @@ alias server="/opt/lampp/lampp"
 alias sagi="sudo apt-get install"
 alias sagu="sudo apt-get update"
 alias saar="sudo add-apt-repository"
+
+# pip
+alias spi="sudo pip install"
 
 #======suffix alias (if a file with the suffix is run)
 alias -s html=vim
