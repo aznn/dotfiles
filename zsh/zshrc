@@ -157,10 +157,10 @@ alias sagu="sudo apt-get update"
 alias saar="sudo add-apt-repository"
 
 #======suffix alias (if a file with the suffix is run)
-alias -s html=sublime
-alias -s css=sublime
-alias -s c=sublime
-alias -s js=sublime
+alias -s html=vim
+alias -s css=vim
+alias -s c=vim
+alias -s js=vim
 alias -s py=python
 
 #======global alias (substitute inside another command)
