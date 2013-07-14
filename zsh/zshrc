@@ -140,6 +140,7 @@ alias gcm="git commit -m"
 alias gcam="git commit -am"
 alias gd="git diff --color"
 alias gs="git status -s"
+alias gl="git log"
 
 alias mv="mv -i" #comfirm on overwrite
 alias rm="rm -i"
