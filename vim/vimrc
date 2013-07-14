@@ -49,6 +49,12 @@ set laststatus=2
 "" set backup dir
 "set backupdir=~/tmp
 
+" command alias
+command WQ wq
+command Wq wq
+command W w
+command Q q
+
 " gvim settings
 if has('gui_running')
     set guioptions=aegimLt    
