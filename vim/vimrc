@@ -13,10 +13,10 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'kevinw/pyflakes-vim.git'
 Bundle 'Lokaltog/powerline'
 Bundle 'tpope/vim-fugitive.git'
-set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim/
+Bundle 'kien/ctrlp.vim'
 
-filetype plugin indent on
-" end vundle settings
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim/
+filetype plugin indent on " end vundle settings
 "--------------------------------------------------------
 
 " Visual settings
@@ -84,6 +84,9 @@ nmap <silent> <c-k> :wincmd k<CR>
 nmap <silent> <c-j> :wincmd j<CR>
 nmap <silent> <c-h> :wincmd h<CR>
 nmap <silent> <c-l> :wincmd l<CR>
+
+" Ctrl P map
+let g:ctrlp_map = '<c-p>'
 
 " gvim settings
 if has('gui_running')
