@@ -139,7 +139,7 @@ alias gc="git commit --verbose"
 alias gca="git commit --verbose -a"
 alias gcm="git commit -m"
 alias gcam="git commit -am"
-alias gd="git diff --color"
+alias gd="git d"
 alias gs="git status -s"
 alias gl="git log"
 
