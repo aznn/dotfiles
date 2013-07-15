@@ -9,7 +9,7 @@ Bundle 'gmarik/vundle'
 " My bundles
 "--------------------------------------------------------
 Bundle 'altercation/vim-colors-solarized.git'
-Bundle 'scrooloose/nerdcommenter.git'
+Bundle 'scrooloose/nerdtree'
 Bundle 'kevinw/pyflakes-vim.git'
 Bundle 'Lokaltog/powerline'
 Bundle 'tpope/vim-fugitive.git'
@@ -58,6 +58,9 @@ command Q q
 " ctrl-c/ctrl-v use system clipboard
 noremap <C-c> "+y
 noremap <c-q> "+p
+
+" Nerd tree toggle
+map <Leader>nt :NERDTreeToggle<CR>
 
 " gvim settings
 if has('gui_running')
