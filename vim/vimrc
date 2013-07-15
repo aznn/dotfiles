@@ -62,6 +62,23 @@ noremap <c-q> "+p
 " Nerd tree toggle
 map <Leader>nt :NERDTreeToggle<CR>
 
+"
+" use ;hj to go into fast scroll mode
+" <Start>
+function MultiScroll(OnOff)
+if a:OnOff == 1
+  noremap j 5j
+  noremap k 5k
+else
+  noremap j j
+  noremap k k
+endif
+endfunction 
+
+map ;j :call MultiScroll(1)<RETURN>
+map ;k :call MultiScroll(0)<RETURN>
+" <End>
+
 " gvim settings
 if has('gui_running')
     set guioptions=aegimLt    
