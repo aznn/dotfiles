@@ -183,3 +183,6 @@ setopt RM_STAR_WAIT
 # enable search history
 bindkey "^[[A" history-search-backward
 bindkey "^[[B" history-search-forward
+
+# Set lang as UTF-8
+export LANG=C.UTF-8
