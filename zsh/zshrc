@@ -150,7 +150,7 @@ alias cp="cp -i"
 alias pyinstall="sudo python setup.py install"
 
 # xampp server
-alias server="/opt/lampp/lampp"
+alias server="sudo /opt/lampp/lampp"
 
 # package management
 alias sagi="sudo apt-get install"

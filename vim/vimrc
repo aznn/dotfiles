@@ -46,6 +46,8 @@ set number
 "" show status all the time
 set laststatus=2
 
+set nowrap
+
 "" set backup dir
 "set backupdir=~/tmp
 
