@@ -170,6 +170,7 @@ alias -s css=vim
 alias -s c=vim
 alias -s js=vim
 alias -s py=python
+alias -s sh=zsh
 
 #======global alias (substitute inside another command)
 alias -g NUL="> /dev/null 2>&1"
