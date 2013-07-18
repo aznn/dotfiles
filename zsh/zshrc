@@ -133,6 +133,7 @@ alias pgoogle="ping www.google.com"
 alias l="ls -lh"
 alias netlog="sudo nethogs"
 alias cc="cd;clear"
+alias op="xdg-open"
 
 # vim aliases
 alias g="gvim"
