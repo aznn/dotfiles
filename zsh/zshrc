@@ -135,6 +135,8 @@ alias netlog="sudo nethogs"
 alias cc="cd;clear"
 alias op="xdg-open"
 
+# android alias
+alias adb="sudo /home/azaan/Software/android-sdk-linux/platform-tools/adb"
 # vim aliases
 alias g="gvim"
 alias v="vim"
