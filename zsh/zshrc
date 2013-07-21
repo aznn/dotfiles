@@ -180,17 +180,13 @@ alias -g NUL="> /dev/null 2>&1"
 
 #======zsh options
 
-# enable !history commands to execute automatically
-setopt no_hist_verify
-
 setopt AUTO_CD
 
-# 10 second wait if you do something that will delete everything.  :)
-setopt RM_STAR_WAIT
-
-# enable search history
-bindkey "^[[A" history-search-backward
-bindkey "^[[B" history-search-forward
+# history options
+setopt hist_ignore_space # dont remember commands which start with space
+setopt no_hist_verify #! history executes automatically
+bindkey "^[OA" history-search-backward # Up
+bindkey "^[OB" history-search-forward # Down
 
 # Set lang as UTF-8
 export LC_ALL=en_US.UTF-8
