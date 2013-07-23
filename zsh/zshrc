@@ -185,8 +185,8 @@ setopt AUTO_CD
 # history options
 setopt hist_ignore_space # dont remember commands which start with space
 setopt no_hist_verify #! history executes automatically
-bindkey "^[OA" history-search-backward # Up
-bindkey "^[OB" history-search-forward # Down
+bindkey "^k" history-search-backward # Up
+bindkey "^j" history-search-forward # Down
 
 # Set lang as UTF-8
 export LC_ALL=en_US.UTF-8
