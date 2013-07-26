@@ -91,6 +91,13 @@ nmap <silent> <c-l> :wincmd l<CR>
 " Ctrl P map
 let g:ctrlp_map = '<c-p>'
 
+" Highlight extra whitespace at the end of lines
+highlight ExtraWhitespace ctermbg=red guibg=red
+au ColorScheme * highlight ExtraWhitespace guibg=red
+au BufEnter * match ExtraWhitespace /\s\+$/
+au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+au InsertLeave * match ExtraWhiteSpace /\s\+$/
+
 " gvim settings
 if has('gui_running')
     set guioptions=aegimLt    
