@@ -50,6 +50,7 @@ typeset -U path
 
 # add to front
 path=(~/dev/bin "$path[@]")
+path=(/home/azaan/.npm/global/bin "$path[@]")
 
 #======custom functions
 
@@ -164,9 +165,11 @@ alias server="sudo /opt/lampp/lampp"
 alias sagi="sudo apt-get install"
 alias sagu="sudo apt-get update"
 alias saar="sudo add-apt-repository"
-
 # pip
 alias spi="sudo pip install"
+# npm
+alias nig="npm install -g"
+alias ni="npm install"
 
 #======suffix alias (if a file with the suffix is run)
 alias -s html=vim
