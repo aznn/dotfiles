@@ -14,7 +14,7 @@ Bundle 'kevinw/pyflakes-vim.git'
 Bundle 'Lokaltog/powerline'
 Bundle 'tpope/vim-fugitive.git'
 Bundle 'kien/ctrlp.vim'
-Bundle 'wakatime/vim-wakatime'
+Bundle 'kchmck/vim-coffee-script'
 
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim/
 filetype plugin indent on " end vundle settings
