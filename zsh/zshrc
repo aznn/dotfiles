@@ -135,6 +135,7 @@ alias l="ls -lh"
 alias netlog="sudo nethogs"
 alias cc="cd;clear"
 alias op="xdg-open"
+alias ack="ack-grep"
 
 # android alias
 alias adb="sudo /home/azaan/Software/android-sdk-linux/platform-tools/adb"
