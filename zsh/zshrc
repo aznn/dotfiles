@@ -124,19 +124,6 @@ alias termy="gnome-terminal --geometry=90x24+500+260"
 alias clem="nohup clementine >/dev/null 2>&1 &"
 alias burp="nohup java -jar ~/dev/bin/burpsuite_free_v1.5.jar > /dev/null 2>&1 &"
 
-# shell helpers
-export TERM=xterm-256color
-alias sz="source ~/.zshrc"
-alias zshrc="gvim ~/dev/dotfiles/zsh/zshrc"
-alias vimrc="gvim ~/dev/dotfiles/vim/vimrc"
-alias cwd="pwd | tr -d '\n' | xsel -b" #copy current working dir
-alias pgoogle="ping www.google.com"
-alias l="ls -lh"
-alias netlog="sudo nethogs"
-alias cc="cd;clear"
-alias op="xdg-open"
-alias ack="ack-grep"
-
 # android alias
 alias adb="sudo /home/azaan/Software/android-sdk-linux/platform-tools/adb"
 # vim aliases
@@ -199,3 +186,26 @@ bindkey "^j" history-search-forward # Down
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
+
+
+# shell helpers
+#-----------------------------------------------
+export TERM=xterm-256color
+alias sz="source ~/.zshrc"
+alias zshrc="gvim ~/dev/dotfiles/zsh/zshrc"
+alias vimrc="gvim ~/dev/dotfiles/vim/vimrc"
+
+# copy current working directory
+alias cwd="pwd | tr -d '\n' | xsel -b"
+
+# show sorted disk usage for current directory
+alias dus="du -xksh * | sort -h"
+
+alias pgoogle="ping www.google.com"
+alias l="ls -lh"
+alias netlogp="sudo nethogs ppp0"
+alias netlogw="sudo nethogs wlan0"
+alias cc="cd;clear"
+alias op="xdg-open"
+alias ack="ack-grep"
+
