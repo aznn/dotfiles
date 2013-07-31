@@ -141,6 +141,7 @@ alias gs="git status -s"
 alias gl="git log"
 alias glo="git log --oneline --graph"
 alias gph="git push heroku master"
+alias gpo="git push origin master"
 
 alias mv="mv -i" #comfirm on overwrite
 alias rm="rm -i"
