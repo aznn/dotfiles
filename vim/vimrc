@@ -76,7 +76,7 @@ else
   noremap j j
   noremap k k
 endif
-endfunction 
+endfunction
 
 map ;j :call MultiScroll(1)<RETURN>
 map ;k :call MultiScroll(0)<RETURN>
@@ -100,7 +100,7 @@ au InsertLeave * match ExtraWhiteSpace /\s\+$/
 
 " gvim settings
 if has('gui_running')
-    set guioptions=aegimLt    
+    set guioptions=aegimLt
     set lines=36
     set columns=80
 endif
