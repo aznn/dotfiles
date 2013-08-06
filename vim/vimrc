@@ -1,106 +1,112 @@
-" start vundle Settings
-set nocompatible
-filetype off
+"==
+" Init Vundle {
+    set nocompatible
+    filetype off
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Bundle 'gmarik/vundle'
+    set rtp+=~/.vim/bundle/vundle/
+    call vundle#rc()
+    Bundle 'gmarik/vundle'
+" }
 
-" My bundles
-"--------------------------------------------------------
-Bundle 'altercation/vim-colors-solarized.git'
-Bundle 'scrooloose/nerdtree'
-Bundle 'kevinw/pyflakes-vim.git'
-Bundle 'Lokaltog/powerline'
-Bundle 'tpope/vim-fugitive.git'
-Bundle 'kien/ctrlp.vim'
-Bundle 'kchmck/vim-coffee-script'
+"==
+" My bundles {
+    Bundle 'altercation/vim-colors-solarized.git'
+    Bundle 'scrooloose/nerdtree'
+    Bundle 'kevinw/pyflakes-vim.git'
+    Bundle 'Lokaltog/powerline'
+    Bundle 'tpope/vim-fugitive.git'
+    Bundle 'kien/ctrlp.vim'
+    Bundle 'kchmck/vim-coffee-script'
+" }
 
-set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim/
-filetype plugin indent on " end vundle settings
-"--------------------------------------------------------
+"==
+" End Vundle Settings {
+    set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim/
+    filetype plugin indent on " end vundle settings
+" }
 
-" Visual settings
-syntax enable
-set background=dark
-colorscheme solarized
-let g:solarized_termtrans=1
-let g:solarized_termcolors=256
-let g:solarized_contrast="high"
-let g:solarized_visibility="high"
+"==
+" Visual settings {
+    syntax enable
+    set background=dark
+    colorscheme solarized
+    let g:solarized_termtrans=1
+    let g:solarized_termcolors=256
+    let g:solarized_contrast="high"
+    let g:solarized_visibility="high"
 
-" disable blinking cursor
-"set gcr=a:blinkon0
+    " disable blinking cursor
+    set gcr=a:blinkon0
 
-set guifont=Inconsolata\ 13
+    set guifont=Inconsolata\ 13
+    set encoding=utf-8
+    set autoindent
+    set number
+    set nowrap
 
-" tab settings
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-set expandtab
+    " tab settings
+    set tabstop=4
+    set shiftwidth=4
+    set softtabstop=4
+    set expandtab
 
-set encoding=utf-8
-set autoindent
-set number
+    "" show status all the time
+    set laststatus=2
 
-"" show status all the time
-set laststatus=2
+    " Highlight extra whitespace at the end of lines
+    highlight ExtraWhitespace ctermbg=red guibg=red
+    au ColorScheme * highlight ExtraWhitespace guibg=red
+    au BufEnter * match ExtraWhitespace /\s\+$/
+    au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+    au InsertLeave * match ExtraWhiteSpace /\s\+$/
+" }
 
-set nowrap
+"==
+" Gvim settings {
+    if has('gui_running')
+        set guioptions=aegimLt
+        set lines=36
+        set columns=80
+    endif
+" }
 
-"" set backup dir
-"set backupdir=~/tmp
+"==
+" Helper mappings{
+    command WQ wq
+    command Wq wq
+    command W w
+    command Q q
 
-" command alias
-command WQ wq
-command Wq wq
-command W w
-command Q q
+    " ctrl-c/ctrl-v use system clipboard
+    noremap <C-c> "+y
+    noremap <c-q> "+p
 
-" ctrl-c/ctrl-v use system clipboard
-noremap <C-c> "+y
-noremap <c-q> "+p
+    " Nerd tree toggle
+    map <Leader>nt :NERDTreeToggle<CR>
 
-" Nerd tree toggle
-map <Leader>nt :NERDTreeToggle<CR>
+    " Navigate between splits easily
+    nmap <silent> <c-k> :wincmd k<CR>
+    nmap <silent> <c-j> :wincmd j<CR>
+    nmap <silent> <c-h> :wincmd h<CR>
+    nmap <silent> <c-l> :wincmd l<CR>
 
-"
-" use ;hj to go into fast scroll mode
-" <Start>
-function MultiScroll(OnOff)
-if a:OnOff == 1
-  noremap j 5j
-  noremap k 5k
-else
-  noremap j j
-  noremap k k
-endif
-endfunction
+    " Ctrl P map
+    let g:ctrlp_map = '<c-p>'
+" }
 
-map ;j :call MultiScroll(1)<RETURN>
-map ;k :call MultiScroll(0)<RETURN>
-" <End>
+"==
+" Helper functions {
+    " use ;h/;j to enable/disable fast scroll
+    function MultiScroll(OnOff)
+    if a:OnOff == 1
+      noremap j 5j
+      noremap k 5k
+    else
+      noremap j j
+      noremap k k
+    endif
+    endfunction
 
-" Navigate between splits easily
-nmap <silent> <c-k> :wincmd k<CR>
-nmap <silent> <c-j> :wincmd j<CR>
-nmap <silent> <c-h> :wincmd h<CR>
-nmap <silent> <c-l> :wincmd l<CR>
-
-" Ctrl P map
-let g:ctrlp_map = '<c-p>'
-
-" Highlight extra whitespace at the end of lines
-highlight ExtraWhitespace ctermbg=red guibg=red
-au ColorScheme * highlight ExtraWhitespace guibg=red
-au BufEnter * match ExtraWhitespace /\s\+$/
-au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-au InsertLeave * match ExtraWhiteSpace /\s\+$/
-
-" gvim settings
-if has('gui_running')
-    set guioptions=aegimLt
-    set lines=36
-    set columns=80
-endif
+    map ;j :call MultiScroll(1)<RETURN>
+    map ;k :call MultiScroll(0)<RETURN>
+" }
