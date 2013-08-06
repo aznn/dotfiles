@@ -82,7 +82,7 @@
     command W w
     command Q q
 
-    " ctrl-c/ctrl-v use system clipboard
+    " ctrl-c/ctrl-v use system clipboard (LINUX)
     noremap <C-c> "+y
     noremap <c-q> "+p
 
@@ -95,9 +95,14 @@
     nmap <silent> <c-h> :wincmd h<CR>
     nmap <silent> <c-l> :wincmd l<CR>
 
+    " Navigate buffers with Ctrl + [Shift] + tab
+    map <C-S-tab> :bprevious<CR>
+    map <C-tab> :bnext<CR>
+
     " Ctrl P map
     let g:ctrlp_map = '<c-p>'
 
+    " Shortcuts to open some somefiles
     map <leader>rc :e ~/.vimrc<CR>
     map <leader>snip :e ~/.vim/snippets<CR>
 " }
