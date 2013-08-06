@@ -72,6 +72,10 @@
         set guioptions=aegimLt
         set lines=36
         set columns=80
+
+        " Move gVIM window to left/right
+        command WL winpos 71 49
+        command WR winpos 631 49
     endif
 " }
 
