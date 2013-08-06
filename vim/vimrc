@@ -17,6 +17,11 @@
     Bundle 'tpope/vim-fugitive.git'
     Bundle 'kien/ctrlp.vim'
     Bundle 'kchmck/vim-coffee-script'
+
+    "Snip Mate and its dependencies
+    Bundle "MarcWeber/vim-addon-mw-utils"
+    Bundle "tomtom/tlib_vim"
+    Bundle "garbas/vim-snipmate"
 " }
 
 "==
