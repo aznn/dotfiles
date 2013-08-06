@@ -48,6 +48,7 @@
     set autoindent
     set number
     set nowrap
+    set nofoldenable
 
     " tab settings
     set tabstop=4
