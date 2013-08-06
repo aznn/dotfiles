@@ -97,6 +97,9 @@
 
     " Ctrl P map
     let g:ctrlp_map = '<c-p>'
+
+    map <leader>rc :e ~/.vimrc<CR>
+    map <leader>snip :e ~/.vim/snippets<CR>
 " }
 
 "==
