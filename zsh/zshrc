@@ -6,7 +6,7 @@ ZSH_THEME="aeon"
 
 # (plugins can be found in ~/.oh-my-zsh/plugins/*)
 plugins=(git command-not-found sublime autojump heroku)
-plugins+=(compinit pip virtualenvwrapper virtualenv)
+plugins+=(compinit pip virtualenvwrapper virtualenv docker)
 
 source $ZSH/oh-my-zsh.sh
 
