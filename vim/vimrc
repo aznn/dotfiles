@@ -65,6 +65,12 @@
     au BufEnter * match ExtraWhitespace /\s\+$/
     au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
     au InsertLeave * match ExtraWhiteSpace /\s\+$/
+
+    " Show tab and newline chars and set their color
+    set list
+    set listchars=tab:▸\ ,eol:¬
+    highlight NonText guifg=#113d47
+    highlight SpecialKey guifg=#113d47
 " }
 
 "==
@@ -106,6 +112,9 @@
 
     " Ctrl P map
     let g:ctrlp_map = '<c-p>'
+
+    " toggle show whitespace chars
+    nmap <leader>l :set list!<CR>
 
     " Shortcuts to open some somefiles
     map <leader>rc :e ~/.vimrc<CR>
