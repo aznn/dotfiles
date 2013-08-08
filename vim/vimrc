@@ -59,6 +59,10 @@
     "" show status all the time
     set laststatus=2
 
+    " highlight search terms, cancel on Ctrl-l
+    set hlsearch
+    noremap <c-s> :nohl<CR>
+
     " Highlight extra whitespace at the end of lines
     highlight ExtraWhitespace ctermbg=red guibg=red
     au ColorScheme * highlight ExtraWhitespace guibg=red
@@ -93,9 +97,12 @@
     command W w
     command Q q
 
+    " use ; as leader
+    let mapleader=";"
+
     " ctrl-c/ctrl-v use system clipboard (LINUX)
     noremap <C-c> "+y
-    noremap <c-q> "+p
+    noremap <C-q> "+p
 
     " Nerd tree toggle
     map <Leader>nt :NERDTreeToggle<CR>
@@ -134,6 +141,6 @@
     endif
     endfunction
 
-    map ;j :call MultiScroll(1)<RETURN>
-    map ;k :call MultiScroll(0)<RETURN>
+    map <leader>j :call MultiScroll(1)<RETURN>
+    map <leader>k :call MultiScroll(0)<RETURN>
 " }
