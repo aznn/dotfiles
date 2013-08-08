@@ -1,5 +1,5 @@
-"==
 " Init Vundle {
+"==
     set nocompatible
     filetype off
 
@@ -8,8 +8,8 @@
     Bundle 'gmarik/vundle'
 " }
 
-"==
 " My bundles {
+"==
     Bundle 'altercation/vim-colors-solarized.git'
     Bundle 'scrooloose/nerdtree'
     Bundle 'kevinw/pyflakes-vim.git'
@@ -24,14 +24,14 @@
     Bundle "garbas/vim-snipmate"
 " }
 
-"==
 " End Vundle Settings {
+"==
     set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim/
     filetype plugin indent on " end vundle settings
 " }
 
-"==
 " Visual settings {
+"==
     syntax enable
     set background=dark
     colorscheme solarized
@@ -48,7 +48,6 @@
     set autoindent
     set number
     set nowrap
-    set nofoldenable
 
     " tab settings
     set tabstop=4
@@ -71,26 +70,13 @@
     au InsertLeave * match ExtraWhiteSpace /\s\+$/
 
     " Show tab and newline chars and set their color
-    set list
+    " hide listings in terminal vim, does not support so many colors
+    set nolist
     set listchars=tab:▸\ ,eol:¬
     highlight NonText guifg=#113d47
     highlight SpecialKey guifg=#113d47
 " }
 
-"==
-" Gvim settings {
-    if has('gui_running')
-        set guioptions=aegimLt
-        set lines=36
-        set columns=80
-
-        " Move gVIM window to left/right
-        command WL winpos 71 49
-        command WR winpos 631 49
-    endif
-" }
-
-"==
 " Helper mappings{
     command WQ wq
     command Wq wq
@@ -128,8 +114,8 @@
     map <leader>snip :e ~/.vim/snippets<CR>
 " }
 
-"==
 " Helper functions {
+"==
     " use ;h/;j to enable/disable fast scroll
     function MultiScroll(OnOff)
     if a:OnOff == 1
@@ -143,4 +129,19 @@
 
     map <leader>j :call MultiScroll(1)<RETURN>
     map <leader>k :call MultiScroll(0)<RETURN>
+" }
+
+" Gvim settings {
+"==
+    if has('gui_running')
+        set guioptions=aegimt
+        set lines=36
+        set columns=80
+
+        set list
+
+        " Move gVIM window to left/right
+        command WL winpos 71 49
+        command WR winpos 631 49
+    endif
 " }
