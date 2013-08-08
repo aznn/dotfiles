@@ -124,7 +124,7 @@
     nmap <leader>l :set list!<CR>
 
     " Shortcuts to open some somefiles
-    map <leader>rc :e ~/.vimrc<CR>
+    map <leader>rc :e `=resolve(expand("~/.vimrc"))`<CR>
     map <leader>snip :e ~/.vim/snippets<CR>
 " }
 
