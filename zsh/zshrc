@@ -87,6 +87,10 @@ source $ZSH/oh-my-zsh.sh
 
 #==
 # -Shell Helper aliases {
+    # mount win partition as rw
+    alias mountd="sudo mount -t ntfs -o nls=utf8,uid=azaan,gid=azaan,rw,umask=013 /dev/sda5 /media/Delta"
+    alias umountd="sudo umount /media/Delta"
+
     # copy current working directory to clipboard
     alias cwd="pwd | tr -d '\n' | xsel -b"
 
