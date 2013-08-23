@@ -201,6 +201,7 @@ source $ZSH/oh-my-zsh.sh
     alias gcm="git commit -m"
     alias gcam="git commit -am"
     alias gd="git d"
+    alias gdq="git diff"
     alias ga="git add ."
     alias gs="git status -s"
     alias gl="git log --graph --decorate --all --stat"
