@@ -109,7 +109,9 @@ source $ZSH/oh-my-zsh.sh
     alias netlogw="sudo nethogs wlan0"
 
     alias cc="cd;clear"
+
     alias pyinstall="sudo python setup.py install"
+    alias pserver="python -m SimpleHTTPServer"
 
     #==Package management helpers
     alias sagi="sudo apt-get install"
