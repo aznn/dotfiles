@@ -36,6 +36,9 @@ source $ZSH/oh-my-zsh.sh
         test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     fi
 
+    # make grep coloring work well with solarize
+    export GREP_COLOR="00;32"
+
     # Set lang as UTF-8
     export LC_ALL=en_US.UTF-8
     export LANG=en_US.UTF-8
