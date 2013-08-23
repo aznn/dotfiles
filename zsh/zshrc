@@ -41,6 +41,9 @@ source $ZSH/oh-my-zsh.sh
     export LANG=en_US.UTF-8
     export LANGUAGE=en_US.UTF-8
 
+    # Set up palm detection
+    synclient PalmDetect=1 PalmMinWidth=5 PalmMinZ=20
+
     #==
     # -ZSH Specific options {
         COMPLETION_WAITING_DOTS="true"
