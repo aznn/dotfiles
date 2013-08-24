@@ -21,7 +21,7 @@ source $ZSH/oh-my-zsh.sh
 
     # add to front of path
     path=(~/dev/bin "$path[@]")
-    path=(/home/azaan/.npm/global/bin "$path[@]")
+    path=(/home/azaan/local/bin "$path[@]")
 # }
 
 #==
@@ -45,7 +45,7 @@ source $ZSH/oh-my-zsh.sh
     export LANGUAGE=en_US.UTF-8
 
     # Set up palm detection
-    synclient PalmDetect=1 PalmMinWidth=5 PalmMinZ=20
+    synclient PalmDetect=1 PalmMinWidth=8 PalmMinZ=20
 
     #==
     # -ZSH Specific options {
