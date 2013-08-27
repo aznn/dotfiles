@@ -17,11 +17,19 @@
     Bundle 'tpope/vim-fugitive.git'
     Bundle 'kien/ctrlp.vim'
     Bundle 'kchmck/vim-coffee-script'
+    Bundle 'scrooloose/syntastic.git'
+    Bundle 'nathanaelkane/vim-indent-guides'
+    Bundle 'Raimondi/delimitMate'
+    Bundle 'Valloric/YouCompleteMe'
+
+    "Javascript
+    Bundle 'jelera/vim-javascript-syntax'
 
     "Snip Mate and its dependencies
-    Bundle "MarcWeber/vim-addon-mw-utils"
-    Bundle "tomtom/tlib_vim"
-    Bundle "garbas/vim-snipmate"
+    Bundle 'MarcWeber/vim-addon-mw-utils'
+    Bundle 'tomtom/tlib_vim'
+    Bundle 'garbas/vim-snipmate'
+    Bundle 'honza/vim-snippets'
 " }
 
 " End Vundle Settings {
@@ -30,7 +38,7 @@
     filetype plugin indent on " end vundle settings
 " }
 
-" Visual settings {
+" General settings {
 "==
     syntax enable
     set background=dark
@@ -43,24 +51,47 @@
     " disable blinking cursor
     set gcr=a:blinkon0
 
-    set guifont=Inconsolata\ 13
     set encoding=utf-8
     set autoindent
+    set backspace=2
     set number
     set nowrap
+    set cursorline
+
+    " autoreload file when changed
+    set autoread
+
+    " tab = complete as much as possible -> show all -> cycle
+    set wildmode=longest,list,full
+    set wildmenu
+
+    " enable undo even after file was closed
+    set undofile
+    set undodir=~/tmp,/var/tmp,$TEMP
 
     " tab settings
     set tabstop=4
     set shiftwidth=4
     set softtabstop=4
     set expandtab
+    autocmd FileType html setl sw=2 sts=2 ts=2 et
+
+    " make working with buffers easier
+    set hidden
 
     "" show status all the time
     set laststatus=2
 
     " highlight search terms, cancel on Ctrl-l
     set hlsearch
+    set incsearch
     noremap <c-s> :nohl<CR>
+
+    " * command will only highlight matches
+    noremap * *N
+
+    " use ; as leader
+    let mapleader=";"
 
     " Highlight extra whitespace at the end of lines
     highlight ExtraWhitespace ctermbg=red guibg=red
@@ -75,16 +106,29 @@
     set listchars=tab:▸\ ,eol:¬
     highlight NonText guifg=#113d47
     highlight SpecialKey guifg=#113d47
+
+    " highlight shell scripts as bash, not sh
+    let g:is_posix=1
+
+    set scrolloff=2
 " }
 
 " Helper mappings{
     command WQ wq
     command Wq wq
     command W w
-    command Q q
+    command Q qa!
 
-    " use ; as leader
-    let mapleader=";"
+    " fast access to save
+    nnoremap <leader>w :w!<CR>
+    nnoremap <leader>q :qa<CR>
+
+    " make j,k work on view lines, rather than file lines
+    nnoremap j gj
+    nnoremap k gk
+
+    " use R for deleting without overwriting last yank (Rd, R$, etc)
+    noremap R "_d
 
     " ctrl-c/ctrl-v use system clipboard (LINUX)
     noremap <C-c> "+y
@@ -103,15 +147,25 @@
     map <C-S-tab> :bprevious<CR>
     map <C-tab> :bnext<CR>
 
-    " Ctrl P map
-    let g:ctrlp_map = '<c-p>'
-
     " toggle show whitespace chars
     nmap <leader>l :set list!<CR>
 
     " Shortcuts to open some somefiles
     map <leader>rc :e `=resolve(expand("~/.vimrc"))`<CR>
     map <leader>snip :e ~/.vim/snippets<CR>
+
+    " Highlight the pasted text
+    map <leader>vp `[v`]
+
+    " switch to previous buffer, after closing current
+    nnoremap <leader>bq <c-^> :bd #<CR>
+
+    " switch to the directory of current buffer
+    nnoremap <leader>cd :cd %:p:h<CR>
+
+    " use >, < without exiting visual mode
+    vnoremap < <gv
+    vnoremap > >gv
 " }
 
 " Helper functions {
@@ -122,18 +176,35 @@
       noremap j 5j
       noremap k 5k
     else
-      noremap j j
-      noremap k k
+      noremap j gj
+      noremap k gk
     endif
     endfunction
 
+    function! s:DiffWithSaved()
+      let filetype=&ft
+      diffthis
+      vnew | r # | normal! 1Gdd
+      diffthis
+      exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
+    endfunction
+    com! DiffSaved call s:DiffWithSaved()
+
     map <leader>j :call MultiScroll(1)<RETURN>
     map <leader>k :call MultiScroll(0)<RETURN>
+
+    " save a file we dont have permission, after opening
+    cnoremap w!! w !sudo tee % >/dev/null
+
+    " create newlines like o/O in normal mode
+    nnoremap <silent> zj o<Esc>k
+    nnoremap <silent> zk O<Esc>j
 " }
 
 " Gvim settings {
 "==
     if has('gui_running')
+        set guifont=Inconsolata\ 13
         set guioptions=aegimt
         set lines=36
         set columns=80
@@ -144,4 +215,31 @@
         command WL winpos 71 49
         command WR winpos 631 49
     endif
+" }
+
+" Plugin settings {
+"==
+    " syntastic plugin
+    let g:syntastic_check_on_open=1
+    let g:syntastic_html_tidy_ignore_errors=[
+        \ ' proprietary attribute "ng-',
+        \ 'proprietary attribute "required"',
+        \ 'trimming empty']
+
+    " ctrlp plugin
+    let g:ctrlp_map = '<c-p>'
+
+    " vim-indent-guides plugin
+    let g:indent_guides_start_level=2
+    let g:indent_guides_guide_size=1
+
+    " snipMate plugin
+    imap <C-\> <Plug>snipMateNextOrTrigger
+    cmap <C-\> <Plug>snipMateNextOrTrigger
+
+    " delimitMate plugin
+    imap <S-Enter> <CR><CR><Esc>kcc
+
+    " YCM Plugin
+    let g:ycm_autoclose_preview_window_after_insertion=1
 " }

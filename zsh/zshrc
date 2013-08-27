@@ -171,6 +171,16 @@ source $ZSH/oh-my-zsh.sh
     alias op="xdg-open"
     alias ack="ack-grep"
     alias server="sudo /opt/lampp/lampp"
+    alias bower='noglob bower'
+
+    # link to the xampp server
+    function xampp-remove; {
+        rm -f /opt/lampp/htdocs/s/$*
+    }
+
+    function xampp-add; {
+        ln -s `pwd`/$* /opt/lampp/htdocs/s/
+    }
 
     function chrome; {
         google-chrome $* > /dev/null 2>&1 &
@@ -209,4 +219,10 @@ source $ZSH/oh-my-zsh.sh
 
     alias gph="git push heroku master"
     alias gpo="git push origin master"
+# }
+
+#==
+# -Program settings {
+    export VIMRUNTIME=/usr/local/share/vim/vim74
+    export NODE_PATH=~/local/lib/nodejs:~/local/lib/node_modules:/usr/share/javascript
 # }
