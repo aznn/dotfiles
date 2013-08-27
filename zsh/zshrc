@@ -74,7 +74,7 @@ source $ZSH/oh-my-zsh.sh
     alias cp="cp -i"
 
     # make rm safe, add cron job to empty trash
-    alias rm="mv -t ~/.trash"
+    alias rm="mv -trf ~/.trash"
 # }
 
 #==
