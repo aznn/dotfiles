@@ -99,6 +99,7 @@ source $ZSH/oh-my-zsh.sh
 
     # copy current working directory to clipboard
     alias cwd="pwd | tr -d '\n' | xsel -b"
+    alias clip="xsel -b"
 
     # show sorted disk usage for current directory
     alias dus="du -xksh * | sort -h"
@@ -172,6 +173,13 @@ source $ZSH/oh-my-zsh.sh
     alias ack="ack-grep"
     alias server="sudo /opt/lampp/lampp"
     alias bower='noglob bower'
+
+    # shortcuts for printing awk columns
+    function awk1; { awk '{print $1}' }
+    function awk2; { awk '{print $2}' }
+    function awk4; { awk '{print $4}' }
+    function awk5; { awk '{print $5}' }
+    function awk6; { awk '{print $6}' }
 
     # link to the xampp server
     function xampp-remove; {
