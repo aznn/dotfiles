@@ -18,7 +18,7 @@ function check_git_prompt_info() {
 }
 
 PROMPT='
-%{$fg[green]%}%n%{$reset_color%}@%m | $(virtualenv_prompt_info) %{$fg[blue]%}${PWD/#$HOME/~}%{$reset_color%}
+%{$fg[green]%}%n%{$reset_color%}@%m %!| $(virtualenv_prompt_info) %{$fg[blue]%}${PWD/#$HOME/~}%{$reset_color%}
 %{$fg_bold[red]%}$(prompt_char)%{$reset_color%} '
 
 RPROMPT='$(check_git_prompt_info)  [%*]'
