@@ -99,7 +99,7 @@ source $ZSH/oh-my-zsh.sh
 
     # copy current working directory to clipboard
     alias cwd="pwd | tr -d '\n' | xsel -b"
-    alias clip="xsel -b"
+    alias copy="xsel -b"
 
     # show sorted disk usage for current directory
     alias dus="du -xksh * | sort -h"
