@@ -198,6 +198,10 @@ source $ZSH/oh-my-zsh.sh
     function sublime; {
         nohup "/home/azaan/Software/Sublime Text 2/sublime_text" $* >/dev/null 2>&1 &
     }
+
+    function arduino; {
+        sudo nohup arduino $* > /dev/null 2>&1 &
+    }
 # }
 
 #==
@@ -233,4 +237,5 @@ source $ZSH/oh-my-zsh.sh
 # -Program settings {
     export VIMRUNTIME=/usr/local/share/vim/vim74
     export NODE_PATH=~/local/lib/nodejs:~/local/lib/node_modules:/usr/share/javascript
+    alias bd='. bd -s'
 # }
