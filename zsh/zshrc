@@ -21,6 +21,7 @@ source $ZSH/oh-my-zsh.sh
     # add to front of path
     path=(~/dev/bin "$path[@]")
     path=(/home/azaan/local/bin "$path[@]")
+    path=(/home/azaan/Software/sbt/bin "$path[@]")
 # }
 
 #==
