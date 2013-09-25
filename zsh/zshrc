@@ -242,4 +242,7 @@ source $ZSH/oh-my-zsh.sh
     export VIMRUNTIME=/usr/local/share/vim/vim74
     export NODE_PATH=~/local/lib/nodejs:~/local/lib/node_modules:/usr/share/javascript
     alias bd='. bd -s'
+
+    # force gist to always copy url to clipboard
+    alias gist='gist -c'
 # }
