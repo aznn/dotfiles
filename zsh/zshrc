@@ -84,6 +84,7 @@ source $ZSH/oh-my-zsh.sh
     alias -s c=vim
     alias -s js=vim
     alias -s py=python
+    alias -s rb=ruby
     alias -s sh=zsh
 # }
 
