@@ -28,8 +28,8 @@ source $ZSH/oh-my-zsh.sh
 # -Shell Setup {
     export TERM=xterm-256color
     alias sz="source ~/.zshrc"
-    alias zshrc="gvim ~/dev/github/dotfiles/zsh/zshrc"
-    alias vimrc="gvim ~/dev/github/dotfiles/vim/vimrc"
+    alias zshrc="gvim ~/dev/external/dotfiles/zsh/zshrc"
+    alias vimrc="gvim ~/dev/external/dotfiles/vim/vimrc"
 
     # colorize the shell
     if [ -x /usr/bin/dircolors ]; then
@@ -212,7 +212,7 @@ source $ZSH/oh-my-zsh.sh
 # -RhythmRemote settings {
     export PLAYER=rythmbox
     alias rbox="rhythmbox"
-    alias song="/home/azaan/dev/github/Rhythmbox-Remote/rhythmRemote.py"
+    alias song="/home/azaan/dev/external/Rhythmbox-Remote/rhythmRemote.py"
     alias sw="song what"
     alias sn="song next"
     alias sp="song prev"
