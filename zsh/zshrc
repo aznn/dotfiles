@@ -99,6 +99,7 @@ source $ZSH/oh-my-zsh.sh
     # mount win partition as rw
     alias mountd="sudo mount -t ntfs -o nls=utf8,uid=azaan,gid=azaan,rw,umask=013 /dev/sda5 /media/Delta"
     alias umountd="sudo umount /media/Delta"
+    alias rmountd="umountd;mountd;"
 
     # copy current working directory to clipboard
     alias cwd="pwd | tr -d '\n' | xsel -b"
