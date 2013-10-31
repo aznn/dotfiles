@@ -85,7 +85,7 @@ source $ZSH/oh-my-zsh.sh
     alias -s css=vim
     alias -s c=vim
     alias -s js=vim
-    alias -s py=python
+#    alias -s py=python
     alias -s rb=ruby
     alias -s sh=zsh
 # }
@@ -93,7 +93,7 @@ source $ZSH/oh-my-zsh.sh
 #==
 # -Global aliases {
     alias -g NUL="> /dev/null 2>&1"
-# }
+## }
 
 #==
 # -Shell Helper aliases {
@@ -171,18 +171,19 @@ source $ZSH/oh-my-zsh.sh
 
 #==
 # -Open apps
-    alias chromei="chrome -incognito"
+    alias g="gvim"
+    alias v="vim"
+    alias p="python"
+    alias op="xdg-open"
+    alias ack="ack-grep"
+    alias adb="sudo /home/azaan/Software/android-sdk-linux/platform-tools/adb"
+    alias burp="nohup java -jar ~/dev/bin/burpsuite_free_v1.5.jar > /dev/null 2>&1 &"
+    alias bower='noglob bower'
     alias openw="nautilus ."
     alias termx="gnome-terminal --geometry=90x24+100+50"
     alias termy="gnome-terminal --geometry=90x24+500+260"
-    alias burp="nohup java -jar ~/dev/bin/burpsuite_free_v1.5.jar > /dev/null 2>&1 &"
-    alias adb="sudo /home/azaan/Software/android-sdk-linux/platform-tools/adb"
-    alias g="gvim"
-    alias v="vim"
-    alias op="xdg-open"
-    alias ack="ack-grep"
     alias server="sudo /opt/lampp/lampp"
-    alias bower='noglob bower'
+    alias chromei="chrome -incognito"
 
     # shortcuts for printing awk columns
     function awk1; { awk '{print $1}' }
