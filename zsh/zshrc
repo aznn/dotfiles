@@ -22,6 +22,9 @@ source $ZSH/oh-my-zsh.sh
     path=(~/dev/bin "$path[@]")
     path=(/home/azaan/local/bin "$path[@]")
     path=(/home/azaan/Software/sbt/bin "$path[@]")
+
+    # pypath
+    export PYTHONPATH=$PYTHONPATH:/usr/share/opencv/haarcascades
 # }
 
 #==
@@ -173,8 +176,8 @@ source $ZSH/oh-my-zsh.sh
 # -Open apps
     alias g="gvim"
     alias v="vim"
-    alias p="python"
     alias op="xdg-open"
+    alias py="python"
     alias ack="ack-grep"
     alias adb="sudo /home/azaan/Software/android-sdk-linux/platform-tools/adb"
     alias burp="nohup java -jar ~/dev/bin/burpsuite_free_v1.5.jar > /dev/null 2>&1 &"
@@ -191,6 +194,11 @@ source $ZSH/oh-my-zsh.sh
     function awk4; { awk '{print $4}' }
     function awk5; { awk '{print $5}' }
     function awk6; { awk '{print $6}' }
+
+    # make and cd to dir
+    function mdir; {
+        mkdir $* && cd $_
+    }
 
     # link to the xampp server
     function xampp-remove; {
