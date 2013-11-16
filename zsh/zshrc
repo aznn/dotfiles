@@ -22,6 +22,7 @@ source $ZSH/oh-my-zsh.sh
     path=(~/dev/bin "$path[@]")
     path=(/home/azaan/local/bin "$path[@]")
     path=(/home/azaan/Software/sbt/bin "$path[@]")
+    path=(/home/azaan/Software/gradle-1.8/bin "$path[@]")
 
     # pypath
     export PYTHONPATH=$PYTHONPATH:/usr/share/opencv/haarcascades
@@ -170,6 +171,9 @@ source $ZSH/oh-my-zsh.sh
 
     # Restart ubuntu window manager
     alias restartui="sudo service lightdm restart"
+
+    # search
+    alias fname="find . -name"
 # }
 
 #==
@@ -187,6 +191,8 @@ source $ZSH/oh-my-zsh.sh
     alias termy="gnome-terminal --geometry=90x24+500+260"
     alias server="sudo /opt/lampp/lampp"
     alias chromei="chrome -incognito"
+    alias studio="nohup /home/azaan/Software/android-studio/bin/studio.sh > /dev/null 2>&1 &"
+
 
     # shortcuts for printing awk columns
     function awk1; { awk '{print $1}' }
