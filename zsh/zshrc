@@ -30,7 +30,7 @@ source $ZSH/oh-my-zsh.sh
 
 #==
 # -Shell Setup {
-    export EDITOR=gvim
+    export EDITOR=vim
 
     setopt extended_glob
     unsetopt CASE_GLOB
@@ -245,20 +245,27 @@ source $ZSH/oh-my-zsh.sh
 # }
 
 #==
-# -Git aliases {
+# Program aliases {
+    # git
+    alias ga="git add ."
     alias gc="git commit --verbose"
     alias gca="git commit --verbose -a"
+    alias gcA="git add .; gca"
     alias gcm="git commit -m"
     alias gcam="git commit -am"
+    alias gcamend="git commit --amend --verbose"
     alias gd="git d"
     alias gdq="git diff"
     alias ga="git add ."
     alias gs="git status -s"
     alias gl="git log --graph --decorate --all --stat"
     alias glo="git log --oneline --graph"
-
     alias gph="git push heroku master"
     alias gpo="git push origin master"
+    alias gpoh="gpo && gph"
+
+    # django
+    alias manage="py manage.py "
 # }
 
 #==
@@ -269,4 +276,13 @@ source $ZSH/oh-my-zsh.sh
 
     # force gist to always copy url to clipboard
     alias gist='gist -c'
+
+    # java home
+    export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
+
+    # stop python from creating pyc files
+    export PYTHONDONTWRITEBYTECODE=1
+
+    # virtualenvwrapper
+    export WORKON_HOME=~/.envs
 # }

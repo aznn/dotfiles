@@ -12,7 +12,7 @@
 "==
     Bundle 'altercation/vim-colors-solarized.git'
     Bundle 'scrooloose/nerdtree'
-    Bundle 'kevinw/pyflakes-vim.git'
+    "Bundle 'kevinw/pyflakes-vim.git'
     Bundle 'Lokaltog/powerline'
     Bundle 'tpope/vim-fugitive.git'
     Bundle 'kien/ctrlp.vim'
@@ -20,6 +20,9 @@
     Bundle 'nathanaelkane/vim-indent-guides'
     Bundle 'Raimondi/delimitMate'
     Bundle 'Valloric/YouCompleteMe'
+
+    "Python
+    Bundle 'nvie/vim-flake8'
 
     "Javascript
     Bundle 'jelera/vim-javascript-syntax'
@@ -165,6 +168,9 @@
     " use >, < without exiting visual mode
     vnoremap < <gv
     vnoremap > >gv
+
+    " Open vertical splits on right
+    set splitright
 " }
 
 " Helper functions {
@@ -214,6 +220,12 @@
         command WL winpos 71 49
         command WR winpos 631 49
     endif
+" }
+
+" Filetype indentation settings {
+"==
+    au FileType javascript setl sw=2 sts=2 et
+    au FileType html setl sw=2 sts=2 et
 " }
 
 " Plugin settings {
