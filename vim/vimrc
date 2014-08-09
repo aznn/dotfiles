@@ -120,6 +120,7 @@
     command Wq wq
     command W w
     command Q qa!
+    command Wd write|bdelete
 
     " fast access to save
     nnoremap <leader>w :w!<CR>
@@ -204,6 +205,11 @@
     " create newlines like o/O in normal mode
     nnoremap <silent> zj o<Esc>k
     nnoremap <silent> zk O<Esc>j
+
+    " Trim leading whitespace
+    function! TrimWhiteSpace()
+        %s/\s\+$//e
+    endfunction
 " }
 
 " Gvim settings {

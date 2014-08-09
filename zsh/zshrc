@@ -23,9 +23,15 @@ source $ZSH/oh-my-zsh.sh
     path=(/home/azaan/local/bin "$path[@]")
     path=(/home/azaan/Software/sbt/bin "$path[@]")
     path=(/home/azaan/Software/gradle-1.8/bin "$path[@]")
+    path=(/home/azaan/Software/android-sdk-linux/tools "$path[@]")
 
     # pypath
     export PYTHONPATH=$PYTHONPATH:/usr/share/opencv/haarcascades
+
+    export PIP_DOWNLOAD_CACHE=$HOME/.pip-cache
+
+    # source private variables
+    source ~/.zsh_private_env
 # }
 
 #==
@@ -165,8 +171,26 @@ source $ZSH/oh-my-zsh.sh
         chrome "http://www.google.com/search?q=`url-encode "${(j: :)@}"`"
     }
 
+    function pausesleep; {
+        sleep `expr $* \* 60`
+        song pause
+        pm-suspend
+    }
+
+    function suspend; {
+        echo pdbus-send --print-reply --system --dest=org.freedesktop.UPower /org/freedesktop/UPower org.freedesktop.UPower.Suspend
+    }
+
     function suspendat; {
-        echo pdbus-send --print-reply --system --dest=org.freedesktop.UPower /org/freedesktop/UPower org.freedesktop.UPower.Suspend | at $*
+       suspend | at $*
+    }
+
+    function clogin; {
+         curl -X POST -H Content-Type:application/x-www-form-urlencoded -d "username=1158102&mode=191&password=$CHRIST_PASS" http://192.168.100.100:8090/login.xml
+    }
+
+    function clogout; {
+        curl -X POST -H Content-Type:application/x-www-form-urlencoded -d 'username=1158102&mode=193' http://192.168.100.100:8090/logout.xml
     }
 
     # Generate gitignores
@@ -242,6 +266,9 @@ source $ZSH/oh-my-zsh.sh
     alias sp="song prev"
     alias sr="song rate"
     alias p="song play"
+
+    # move 5 rated songs to this folder
+    export RHYTHMBOX_REMOTE_5_FOLDER='/home/azaan/Music/E/'
 # }
 
 #==
@@ -258,20 +285,35 @@ source $ZSH/oh-my-zsh.sh
     alias gdq="git diff"
     alias ga="git add ."
     alias gs="git status -s"
-    alias gl="git log --graph --decorate --all --stat"
-    alias glo="git log --oneline --graph"
+    alias gl="git log --graph --decorate --all --stat --date=relative"
+    alias glo="git log --oneline --decorate --graph --abbrev-commit --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) [%C(blue)%an%C(reset)] - %C(white)%s%C(reset)'"
     alias gph="git push heroku master"
     alias gpo="git push origin master"
     alias gpoh="gpo && gph"
 
     # django
     alias manage="py manage.py "
+    alias splus="python manage.py runserver_plus"
+    alias msm="manage schemamigration"
+    alias mm="manage migrate"
+
+    function testcov; {
+        coverage run --source='.' manage.py test
+        coverage html
+        op htmlcov/index.html
+    }
+
+    # tmux
+    alias ta="tmux attach -t"
+
+    function qskype; {
+        pgrep Skype | awk2 | xargs kill -9
+    }
 # }
 
 #==
 # -Program settings {
     export VIMRUNTIME=/usr/local/share/vim/vim74
-    export NODE_PATH=~/local/lib/nodejs:~/local/lib/node_modules:/usr/share/javascript
     alias bd='. bd -s'
 
     # force gist to always copy url to clipboard
@@ -285,4 +327,11 @@ source $ZSH/oh-my-zsh.sh
 
     # virtualenvwrapper
     export WORKON_HOME=~/.envs
+    source /usr/local/bin/virtualenvwrapper.sh
+
+    [ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh
+
+    # a project build hook
+    alias build="./.build.sh"
 # }
+
