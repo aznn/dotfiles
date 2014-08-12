@@ -1,5 +1,5 @@
 # Vars {{ -----------------------------------------------------------------------------------------
-    set -x EDITOR vim
+    set -x EDITOR subl3
 
     # used by rhythmbox-remote
     set -x SONG_LIBRARY '/home/azaan/Delta/Media Library/Music'
@@ -12,14 +12,17 @@
 
 # General Helpers {{ ------------------------------------------------------------------------------
 
-    # source the config file
+    # helpers to open common config files
+
+
     function sf
+        # source the config file
         source ~/.config/fish/config.fish
     end
 
-    # rerun last command with sudo
     function sudo!!
-        eval sudo $history[1]
+        # rerun last command with sudo
+        eval sudo $history[1] $argv
     end
 
     function rmouse
