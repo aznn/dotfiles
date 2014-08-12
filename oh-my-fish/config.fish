@@ -12,8 +12,11 @@
 
 # General Helpers {{ ------------------------------------------------------------------------------
 
-    # helpers to open common config files
+    alias subl subl3
 
+    # helpers to open common config files
+    alias fishrc "subl3 ~/.config/fish/config.fish"
+    alias awesomerc "subl3 ~/.config/awesome/rc.lua"
 
     function sf
         # source the config file
