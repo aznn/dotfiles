@@ -1,5 +1,5 @@
 # Vars {{ -----------------------------------------------------------------------------------------
-    set -x EDITOR subl3
+    set -x EDITOR vim
 
     # used by rhythmbox-remote
     set -x SONG_LIBRARY '/home/azaan/Delta/Media Library/Music'
@@ -12,9 +12,8 @@
 
 # General Helpers {{ ------------------------------------------------------------------------------
 
-
     # helpers to open common config files
-    alias fishrc "subl3 ~/.config/fish/config.fish"
+    alias fishrc "subl3 ~/dotfiles/oh-my-fish/config.fish"
     alias awesomerc "subl3 ~/.config/awesome/rc.lua"
 
     # aliases of programs for ease
@@ -84,7 +83,8 @@
     alias sr "song rate"
 
     # move 5 rated songs to this folder
-    export RHYTHMBOX_REMOTE_5_FOLDER='/home/azaan/Music/E'
+    set -x RHYTHMBOX_REMOTE_5_FOLDER /home/azaan/Music/E
+
 # }}
 
 # Git {{ -----------------------------------------------------------------------------------------
