@@ -12,11 +12,20 @@
 
 # General Helpers {{ ------------------------------------------------------------------------------
 
-    alias subl subl3
 
     # helpers to open common config files
     alias fishrc "subl3 ~/.config/fish/config.fish"
     alias awesomerc "subl3 ~/.config/awesome/rc.lua"
+
+    # aliases of programs for ease
+    alias subl subl3
+    alias py2 python2.7
+    alias chrome google-chrome-beta
+
+    # package management helpers
+    alias pac "sudo pacman -S"
+    alias spi "sudo pip install"
+    alias sp2i "sudo pip2 install"
 
     function sf
         # source the config file
@@ -38,6 +47,27 @@
         curl -X POST -H Content-Type:application/x-www-form-urlencoded -d "username=1158102&mode=191&password=$CHRIST_PASS" http://192.168.100.100:8090/login.xml
     end
 
+    function cwd
+        # copy current working dir to clipboard
+        pwd | tr -d '\n' | xsel -b
+    end
+
+    function copy
+        # copies the text piped in
+        xsel -b
+    end
+
+    function mdir
+        # creates a directory and cd to it
+        mkdir $argv
+        cd $argv[-1]
+    end
+
+    # helper awk commands to print specified column
+    alias awk1 "ask '{print $1}'"
+    alias awk2 "ask '{print $2}'"
+    alias awk3 "ask '{print $3}'"
+
 # }}
 
 # Rhythmbox {{ -----------------------------------------------------------------------------------
@@ -47,13 +77,29 @@
         python2.7 ~/dev/external/Rhythmbox-Remote/rhythmRemote.py $argv
     end
 
-    function p
-        # play the song given as args
-        song play $argv
-    end
+    alias p "song play"
+    alias sw "song what"
+    alias sn "song next"
+    alias sp "song prev"
+    alias sr "song rate"
 
+    # move 5 rated songs to this folder
+    export RHYTHMBOX_REMOTE_5_FOLDER='/home/azaan/Music/E'
 # }}
 
 # Git {{ -----------------------------------------------------------------------------------------
+
+    alias ga "git add ."
+    alias gdq "git diff"
+    alias gs "git status"
+    alias gcm "git commit -m"
+    alias gcam "git commit -am"
+    alias gc "git commit --verbose"
+    alias gph "git push heroku master"
+    alias gpo "git push origin master"
+    alias gca "git commit --verbose -a"
+    alias gcamend "git commit --amend --verbose"
+    alias gl "git log --graph --decorate --all --stat --date=relative"
+    alias glo "git log --oneline --decorate --graph --abbrev-commit --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) [%C(blue)%an%C(reset)] - %C(white)%s%C(reset)'"
 
 # }}
