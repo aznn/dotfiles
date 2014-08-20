@@ -3,11 +3,14 @@
 
     # used by rhythmbox-remote
     set -x SONG_LIBRARY '/home/azaan/Delta/Media Library/Music'
+
+    # ask virtualfish to use workon and deactivate
+    set -x VIRTUALFISH_COMPAT_ALIASES 1
 # }}
 
 # Autorun {{ --------------------------------------------------------------------------------------
     # setup palm detection
-    synclient PalmDetect=1 PalmMinWidth=5 PalmMinZ=20
+    synclient PalmDetect=1 PalmMinWidth=8 PalmMinZ=20
 # }}
 
 # General Helpers {{ ------------------------------------------------------------------------------
@@ -62,10 +65,15 @@
         cd $argv[-1]
     end
 
+    function pserver
+        # starts a python server in current folder
+        python2 -m SimpleHTTPServer $argv
+    end
+
     # helper awk commands to print specified column
-    alias awk1 "ask '{print $1}'"
-    alias awk2 "ask '{print $2}'"
-    alias awk3 "ask '{print $3}'"
+    alias awk1 "awk '{print $1}'"
+    alias awk2 "awk '{print $2}'"
+    alias awk3 "awk '{print $3}'"
 
 # }}
 
