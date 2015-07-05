@@ -6,11 +6,34 @@
 
     # ask virtualfish to use workon and deactivate
     set -x VIRTUALFISH_COMPAT_ALIASES 1
+
+    # stop python writing pyc files
+    set -x PYTHONDONTWRITEBYTECODE 1
+
+    # add composer binaries to path
+    set -gx PATH /home/azaan/.composer/vendor/bin $PATH
+
+    # add facebook file picker to path
+    set -gx PATH /home/azaan/Software/PathPicker $PATH
+
+    # add ruby gems to path
+    set -gx PATH /home/azaan/.gem/ruby/2.1.0/bin $PATH
+
+    # Add popcorn time to path
+    set -gx PATH /home/azaan/Downloads/Popcorn-Time-0.3.7.2-Linux64 $PATH
 # }}
 
 # Autorun {{ --------------------------------------------------------------------------------------
     # setup palm detection
     synclient PalmDetect=1 PalmMinWidth=8 PalmMinZ=20
+# }}
+
+# Program Configs {{ ------------------------------------------------------------------------------
+
+    function fuck
+        eval (thefuck (history | head -n1))
+    end
+
 # }}
 
 # General Helpers {{ ------------------------------------------------------------------------------
@@ -49,6 +72,12 @@
         curl -X POST -H Content-Type:application/x-www-form-urlencoded -d "username=1158102&mode=191&password=$CHRIST_PASS" http://192.168.100.100:8090/login.xml
     end
 
+    function clogine
+        clogin
+        sleep 0.5
+        exit
+    end
+
     function cwd
         # copy current working dir to clipboard
         pwd | tr -d '\n' | xsel -b
@@ -70,6 +99,11 @@
         python2 -m SimpleHTTPServer $argv
     end
 
+    function vol
+        # usage: vol 30%
+        amixer set Master $argv
+    end
+
     # helper awk commands to print specified column
     alias awk1 "awk '{print $1}'"
     alias awk2 "awk '{print $2}'"
@@ -79,9 +113,19 @@
 
 # Rhythmbox {{ -----------------------------------------------------------------------------------
 
+    function unmute
+        amixer -d set Master unmute
+    end
+
     function song
         # helper to run rhythmbox script
         python2.7 ~/dev/external/Rhythmbox-Remote/rhythmRemote.py $argv
+    end
+
+    function pe
+        song play $argv
+        sleep 0.5
+        exit
     end
 
     alias p "song play"
