@@ -1,0 +1,125 @@
+Host ewitypos
+	User ec2-user
+	Hostname 18.136.129.109
+	IdentityFile ~/.ssh/ewity-pos.pem
+
+Host ewitypos2
+	User ec2-user
+	Hostname 13.251.92.167
+	IdentityFile ~/.ssh/ewity-pos.pem
+
+Host ewityapps
+	User ec2-user
+	Hostname ec2-18-136-61-7.ap-southeast-1.compute.amazonaws.com
+	IdentityFile ~/.ssh/ewity-apps.pem
+
+Host ewityecom
+	User ec2-user
+	Hostname ec2-3-0-49-221.ap-southeast-1.compute.amazonaws.com
+	IdentityFile ~/.ssh/ewity-apps.pem
+
+Host ewitymisc
+	User ec2-user
+	Hostname 13.228.14.16
+	IdentityFile ~/.ssh/ewity-apps.pem
+
+Host ewitysftp
+  User ec2-user
+  Hostname 54.179.86.64
+  IdentityFile ~/.ssh/ewity-pos.pem
+
+Host ewitystaging
+	User ec2-user
+	Hostname 13.250.163.53
+	IdentityFile ~/.ssh/ewity-staging.pem
+
+Host git-codecommit.*.amazonaws.com
+	User APKA3NXFKS6A7DZN4SNS
+	IdentityFile ~/.ssh/id_rsa
+
+Host up-sendy
+	User ec2-user
+	Hostname 13.250.115.62
+	IdentityFile ~/.ssh/prime.pem
+
+Host self-serve-staging
+	User ec2-user
+	Hostname ec2-54-169-141-172.ap-southeast-1.compute.amazonaws.com
+	IdentityFile ~/.ssh/growth-admin.pem
+
+Host satellite-analytics
+	User ubuntu
+	Hostname 13.229.93.13
+	Port 22
+	ProxyCommand ssh -q -W %h:%p prime-hq
+
+Host do-yoga
+	User ec2-user
+	Hostname 3.1.43.96
+	IdentityFile ~/.ssh/do-yoga.pem
+
+
+
+
+##
+# UrbanPiper Core Infrastructure
+###
+
+Host up-bastion
+	User ubuntu
+	Hostname 3.0.58.189
+	ForwardAgent yes
+
+Host vpc-aux-qc-1
+	User ubuntu
+	Hostname 172.66.1.44
+	ProxyCommand ssh -q -W %h:%p up-bastion
+
+Host vpc-aux-qc-4
+	User ubuntu
+	Hostname 172.66.2.111
+	ProxyCommand ssh -q -W %h:%p up-bastion
+
+##
+# Prime Stup
+###
+
+Host prime-hq
+	User ec2-user
+	Hostname 52.220.72.45
+	IdentityFile ~/.ssh/prime.pem
+
+
+Host prime-staging
+	User root
+	Hostname 66.42.52.178
+
+
+Host prime-mongo
+	User ec2-user
+	Hostname 172.31.55.5
+	Port 22
+	ProxyCommand ssh -q -W %h:%p prime-hq
+	IdentityFile ~/.ssh/prime.pem
+
+##
+# EIS Setup
+##
+
+Host eis-bastion
+  User ec2-user
+  Hostname 3.0.58.189
+  IdentityFile ~/.ssh/growth-admin.pem
+
+Host eis-prod-rabbitmq
+  User ubuntu
+  Hostname 10.7.10.22
+  ProxyCommand ssh -q -W %h:%p eis-bastion
+
+##
+# GCP Prime Staging
+##
+
+Host gcp-staging-bastion
+    User azaan
+    Hostname 35.213.189.127
