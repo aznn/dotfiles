@@ -172,4 +172,7 @@ source $ZSH/oh-my-zsh.sh
     alias splus="python manage.py runserver_plus"
     alias msm="manage schemamigration"
     alias mm="manage migrate"
+
+    # docker
+    alias dc="docker-compose"
 # }
