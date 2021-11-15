@@ -1,54 +1,14 @@
-" Init Vundle {
+" Init {
 "==
     set nocompatible
     filetype off
-
-    set rtp+=~/.vim/bundle/Vundle.vim
-    call vundle#begin()
-    Bundle 'gmarik/vundle.vim'
 " }
 
-" My bundles {
-"==
-    Bundle 'altercation/vim-colors-solarized.git'
-    Bundle 'scrooloose/nerdtree'
-    "Bundle 'kevinw/pyflakes-vim.git'
-    Bundle 'Lokaltog/powerline'
-    Bundle 'tpope/vim-fugitive.git'
-    Bundle 'kien/ctrlp.vim'
-    Bundle 'scrooloose/syntastic.git'
-    Bundle 'nathanaelkane/vim-indent-guides'
-    Bundle 'Raimondi/delimitMate'
-    Bundle 'Valloric/YouCompleteMe'
-
-    "Python
-    Bundle 'nvie/vim-flake8'
-
-    "Javascript
-    Bundle 'jelera/vim-javascript-syntax'
-
-    "Snip Mate and its dependencies
-    Bundle 'MarcWeber/vim-addon-mw-utils'
-    Bundle 'tomtom/tlib_vim'
-    Bundle 'garbas/vim-snipmate'
-    Bundle 'honza/vim-snippets'
-" }
-
-" End Vundle Settings {
-"==
-    set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim/
-    filetype plugin indent on " end vundle settings
-" }
 
 " General settings {
 "==
     syntax enable
     set background=dark
-    colorscheme solarized
-    let g:solarized_termtrans=1
-    let g:solarized_termcolors=256
-    let g:solarized_contrast="high"
-    let g:solarized_visibility="high"
 
     " disable blinking cursor
     set gcr=a:blinkon0
@@ -58,7 +18,6 @@
     set backspace=2
     set number
     set nowrap
-    set cursorline
 
     " autoreload file when changed
     set autoread
@@ -174,89 +133,8 @@
     set splitright
 " }
 
-" Helper functions {
-"==
-    " use ;h/;j to enable/disable fast scroll
-    function MultiScroll(OnOff)
-    if a:OnOff == 1
-      noremap j 5j
-      noremap k 5k
-    else
-      noremap j gj
-      noremap k gk
-    endif
-    endfunction
-
-    function! s:DiffWithSaved()
-      let filetype=&ft
-      diffthis
-      vnew | r # | normal! 1Gdd
-      diffthis
-      exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
-    endfunction
-    com! DiffSaved call s:DiffWithSaved()
-
-    map <leader>j :call MultiScroll(1)<RETURN>
-    map <leader>k :call MultiScroll(0)<RETURN>
-
-    " save a file we dont have permission, after opening
-    cnoremap w!! w !sudo tee % >/dev/null
-
-    " create newlines like o/O in normal mode
-    nnoremap <silent> zj o<Esc>k
-    nnoremap <silent> zk O<Esc>j
-
-    " Trim leading whitespace
-    function! TrimWhiteSpace()
-        %s/\s\+$//e
-    endfunction
-" }
-
-" Gvim settings {
-"==
-    if has('gui_running')
-        set guifont=Inconsolata\ 13
-        set guioptions=aegimt
-        set lines=36
-        set columns=80
-
-        set list
-
-        " Move gVIM window to left/right
-        command WL winpos 71 49
-        command WR winpos 631 49
-    endif
-" }
-
 " Filetype indentation settings {
 "==
     au FileType javascript setl sw=2 sts=2 et
     au FileType html setl sw=2 sts=2 et
-" }
-
-" Plugin settings {
-"==
-    " syntastic plugin
-    let g:syntastic_check_on_open=1
-    let g:syntastic_html_tidy_ignore_errors=[
-        \ ' proprietary attribute "ng-',
-        \ 'proprietary attribute "required"',
-        \ 'trimming empty']
-
-    " ctrlp plugin
-    let g:ctrlp_map = '<c-p>'
-
-    " vim-indent-guides plugin
-    let g:indent_guides_start_level=2
-    let g:indent_guides_guide_size=1
-
-    " snipMate plugin
-    imap <C-\> <Plug>snipMateNextOrTrigger
-    cmap <C-\> <Plug>snipMateNextOrTrigger
-
-    " delimitMate plugin
-    imap <S-Enter> <CR><CR><Esc>kcc
-
-    " YCM Plugin
-    let g:ycm_autoclose_preview_window_after_insertion=1
 " }
