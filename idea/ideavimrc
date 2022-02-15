@@ -1,2 +1,8 @@
+imap <C-k> 7k
+imap <C-j> 7j
+
 nmap <C-k> 7k
 nmap <C-j> 7j
+
+vmap <C-k> 7k
+vmap <C-j> 7j

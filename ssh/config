@@ -59,8 +59,6 @@ Host do-yoga
 	IdentityFile ~/.ssh/do-yoga.pem
 
 
-
-
 ##
 # UrbanPiper Core Infrastructure
 ###
@@ -123,3 +121,11 @@ Host eis-prod-rabbitmq
 Host gcp-staging-bastion
     User azaan
     Hostname 35.213.189.127
+
+##
+# Meraki
+##
+
+Host editor-api
+    User ubuntu
+    Hostname 18.139.97.215

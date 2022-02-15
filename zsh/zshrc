@@ -20,6 +20,7 @@ source $ZSH/oh-my-zsh.sh
 
     # add to front of path
     path=(~/bin "$path[@]")
+    path=(~/.composer/vendor/bin "$path[@]")
 
 # }
 
@@ -67,13 +68,8 @@ source $ZSH/oh-my-zsh.sh
     alias l="ls -lhF"
     alias ls="ls -F --color"
 
-    alias RM="\rm -f"
-
     # -i = make interactice
     alias cp="cp -i"
-
-    # make rm safe, add cron job to empty trash
-    alias rm="mv -t ~/.trash"
 # }
 
 #==
@@ -175,4 +171,9 @@ source $ZSH/oh-my-zsh.sh
 
     # docker
     alias dc="docker-compose"
+
+    # laravel
+    alias erun="envoy run"
+    alias art="php artisan"
+    alias dcart="docker-compose exec app php artisan $@"
 # }
